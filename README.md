@@ -1,4 +1,4 @@
-# frend-duoyanapps
+# folder-baru
 
 ## Project setup
 ```
