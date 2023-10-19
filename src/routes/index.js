@@ -7,7 +7,7 @@ const loadView = (view) => {
 export default [
   {
     path: '/',
-    redirect: { name: 'Login' }, // Tentukan halaman default di sini
+    redirect: { name: 'Dashboard' }, // Tentukan halaman default di sini
   },
   {
     path: '/service-talent',
@@ -43,5 +43,10 @@ export default [
     path: '/contact',
     name: 'ContactUs',
     component: loadView('Main/Contact'), 
+  },
+  { 
+    path: '/member',
+    name: 'Member',
+    component: loadView('Member/IndexPage'), 
   },
 ];

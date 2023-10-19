@@ -23,6 +23,29 @@ const mutations = {
   postServiceTalent(state, postServiceTalent) {
     state.postServiceTalent = postServiceTalent;
   },
+
+  // product
+  productData(state, productData) {
+    state.productData = productData;
+  },
+
+  // member
+  memberData(state, memberData) {
+    state.memberData = memberData;
+  },
+
+  memberStample(state, memberStample) {
+    state.memberStample = memberStample;
+  },
+
+  memberStampleClaim(state, memberStampleClaim) {
+    state.memberStampleClaim = memberStampleClaim;
+  },
+
+  memberPurchasing(state, memberPurchasing) {
+    state.memberPurchasing = memberPurchasing;
+  },
+
 };
 
 export default mutations;

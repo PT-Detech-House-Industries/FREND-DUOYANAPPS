@@ -32,7 +32,7 @@
       };
     },
     methods: {
-      logins() {
+      login() {
         // Implementasi logika autentikasi di sini
         // Contoh: Anda dapat melakukan validasi username dan password
         if (this.username === 'user' && this.password === '123') {
@@ -43,9 +43,9 @@
         }
       },
 
-      async login() {
+      async logins() {
         try {
-          const response = await axios.post('http://localhost:8000/api/login', {
+          const response = await axios.post('https://duoyan.nihonuwu.com/api/login', {
             login_field: this.username,
             password: this.password,
           });

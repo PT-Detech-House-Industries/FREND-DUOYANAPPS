@@ -4,6 +4,9 @@
     <div class="title">
       <h1>Selamat datang !</h1>
       <p>Ini adalah halaman Beranda aplikasi kami.</p>
+      <div>
+        <button @click="tampilkanToast">Tampilkan Toast</button>
+      </div>
     </div>
     <div class="widget-search">
       <div class="search-container">
@@ -41,6 +44,9 @@
 
 <script>
   import TopMenu from '../components/TopMenu.vue';
+  import Toasted from 'vue-toasted';
+  import Vue from 'vue';
+  
   export default {
     name: 'HomePage',
     data() {
@@ -59,7 +65,12 @@
         setTimeout(async () => {
           this.loading = false;
         }, 1500);
-      }
+      },
+      tampilkanToast() {
+        this.$toasted.show('Pesan Anda di sini', {
+          type: 'my-custom-toast', // Gunakan jenis toast kustom yang Anda daftarkan
+        });
+      },
     },
     components: {
       TopMenu,
@@ -74,6 +85,19 @@
       this.loadData();
     },
     mounted() {
+      // Register the toast plugin and configure options
+      Vue.use(Toasted);
+
+      const toastOptions = {
+        theme: 'toasted-primary',
+        position: 'top-center',
+        duration: 100,
+      };
+
+      Vue.toasted.register('my-custom-toast', (message) => {
+        return message;
+      }, toastOptions);
+      
       document.title = 'home - nihonuwu'
     }
   };

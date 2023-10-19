@@ -4,7 +4,7 @@
       <img src="../assets/png/logo.png" alt="Logo" class="logo">
     </router-link>
     <div class="kanan">
-      <!-- <div class="menu-option">
+      <div class="menu-option">
         <router-link to="/dashboard">Beranda</router-link>
       </div>
       <div class="menu-option">
@@ -12,13 +12,16 @@
       </div>
       <div class="menu-option">
         <router-link to="/contact">Kontak</router-link>
-      </div> -->
+      </div>
       <div class="menu-option">
+        <router-link to="/member">Member</router-link>
+      </div>
+      <!-- <div class="menu-option">
         <form @submit.prevent="logout">
           <input class="submit" type="submit" value="Logout">
         </form>
-        <!-- <router-link to="/contact">Logout</router-link> -->
-      </div>
+        <router-link to="/contact">Logout</router-link>
+      </div> -->
     </div>
   </div>
 </template>

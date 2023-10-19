@@ -1,7 +1,8 @@
 import axios from 'axios'
 
 const serverApi = axios.create({
-  baseURL: 'http://localhost:8000/api/',
+  // baseURL: 'http://localhost:8000/api/',
+  baseURL: 'https://duoyan.nihonuwu.com/api/',
 })
 
 const cors = {
@@ -53,6 +54,62 @@ const actions = {
       commit('postServiceTalent', data); // Panggil mutasi SET_DATA untuk menyimpan data
     } catch (error) {
       console.error('Error posting data:', error);
+    }
+  },
+  // product
+  async fetchProduct({ commit }) {
+    try {
+      // Panggil API di sini
+      const response = await serverApi.get('product', cors);
+      const data = response.data;
+      commit('productData', data); // Panggil mutasi SET_DATA untuk menyimpan data
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  },
+
+  // member
+  async fetchMember({ commit }) {
+    try {
+      // Panggil API di sini
+      const response = await serverApi.get('member-purchasing', cors);
+      const data = response.data;
+      commit('memberData', data); // Panggil mutasi SET_DATA untuk menyimpan data
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  },
+
+  async fetchMemberStample({ commit }) {
+    try {
+      // Panggil API di sini
+      const response = await serverApi.get('member-stample', cors);
+      const data = response.data;
+      commit('memberStample', data); // Panggil mutasi SET_DATA untuk menyimpan data
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  },
+
+  async fetchMemberStampleClaim({ commit }) {
+    try {
+      // Panggil API di sini
+      const response = await serverApi.get('member-stample-claim', cors);
+      const data = response.data;
+      commit('memberStampleClaim', data); // Panggil mutasi SET_DATA untuk menyimpan data
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  },
+
+  async fetchMemberPurchasing({ commit }) {
+    try {
+      // Panggil API di sini
+      const response = await serverApi.get('member-purchasing', cors);
+      const data = response.data;
+      commit('memberPurchasing', data); // Panggil mutasi SET_DATA untuk menyimpan data
+    } catch (error) {
+      console.error('Error fetching data:', error);
     }
   },
 };
