@@ -1,74 +1,84 @@
 <template>
-  <div class="top-menu">
-    <router-link to="/">
-      <img src="../assets/png/logo.png" alt="Logo" class="logo">
-    </router-link>
-    <div class="kanan">
-      <div class="menu-option">
+  <div>
+    <!-- new -->
+    <div class="nav-menu">
+      <div class="nav-items">
         <router-link to="/dashboard">Beranda</router-link>
-      </div>
-      <div class="menu-option">
         <router-link to="/about">Tentang</router-link>
-      </div>
-      <div class="menu-option">
         <router-link to="/contact">Kontak</router-link>
       </div>
-      <div class="menu-option">
-        <router-link to="/member">Member</router-link>
-      </div>
-      <!-- <div class="menu-option">
-        <form @submit.prevent="logout">
-          <input class="submit" type="submit" value="Logout">
-        </form>
-        <router-link to="/contact">Logout</router-link>
-      </div> -->
     </div>
+
+      <!-- <a href="#home" class="active">Home</a>
+      <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">About</a> -->
+    <!-- old -->
+    <!-- <div class="top-menu">
+      <router-link to="/">
+        <img src="../assets/png/logo.png" alt="Logo" class="logo">
+      </router-link>
+      <div class="kanan">
+        <div class="menu-option">
+          <router-link to="/dashboard">Beranda</router-link>
+        </div>
+        <div class="menu-option">
+          <router-link to="/about">Tentang</router-link>
+        </div>
+        <div class="menu-option">
+          <router-link to="/contact">Kontak</router-link>
+        </div>
+        <div class="menu-option">
+          <router-link to="/member">Member</router-link>
+        </div>
+        <div class="menu-option">
+          <form @submit.prevent="logout">
+            <input class="submit" type="submit" value="Logout">
+          </form>
+          <router-link to="/contact">Logout</router-link>
+        </div>
+      </div>
+    </div> -->
   </div>
 </template>
 
 <script>
-import axios from 'axios';
-
-export default {
-  data() {
-    return {
-      isActive: false,
-    };
-  },
-  methods: {
-    async logout() {
-      try {
-        // Ambil token akses dari localStorage
-        const accessToken = localStorage.getItem('access_token');
-
-        // Pastikan token akses ada sebelum melakukan permintaan logout
-        if (accessToken) {
-          // Setel konfigurasi Axios dengan header bearer token
-          const config = {
-            headers: {
-              'Authorization': `Bearer ${accessToken}`
-            }
-          };
-
-          // Lakukan permintaan logout ke API dengan konfigurasi yang telah disetel
-          await axios.get('http://localhost:8000/api/logout', config);
-        }
-
-        // Hapus token akses dari localStorage
-        localStorage.removeItem('access_token');
-
-        // Redirect ke halaman login atau halaman lain sesuai kebutuhan
-        this.$router.push('/login');
-        
-      } catch (error) {
-        // Handle errors here, such as displaying an error message.
-        console.error('Login failed:', error);
-        // Display error message to the user
-        this.errorMessage = 'Login failed. Please check your credentials.';
-      }
+  import axios from 'axios';
+  export default {
+    data() {
+      return {
+        isActive: false,
+      };
     },
-  },
-};
+    methods: {
+      async logout() {
+        try {
+          // Ambil token akses dari localStorage
+          const accessToken = localStorage.getItem('access_token');
+          // Pastikan token akses ada sebelum melakukan permintaan logout
+          if (accessToken) {
+            // Setel konfigurasi Axios dengan header bearer token
+            const config = {
+              headers: {
+                'Authorization': `Bearer ${accessToken}`
+              }
+            };
+            // Lakukan permintaan logout ke API dengan konfigurasi yang telah disetel
+            await axios.get('http://localhost:8000/api/logout', config);
+          }
+          // Hapus token akses dari localStorage
+          localStorage.removeItem('access_token');
+          // Redirect ke halaman login atau halaman lain sesuai kebutuhan
+          this.$router.push('/login');
+        } catch (error) {
+          // Handle errors here, such as displaying an error message.
+          console.error('Login failed:', error);
+          // Display error message to the user
+          this.errorMessage = 'Login failed. Please check your credentials.';
+        }
+      },
+    },
+  };
 </script>
 
 <style scoped lang="scss">
@@ -137,7 +147,97 @@ export default {
 </style> <!-- untuk header  -->
 
 <style>
-.kanan {
-  float: right;
-}
+  .kanan {
+    float: right;
+  }
 </style><!-- untuk active -->
+
+<style scoped lang="scss">
+  @import '@/scss/_theme.scss';
+  .nav-menu {
+    background-color: $primary-color;
+    width: 480px;
+    top: 0;
+    position: fixed;
+    // margin: auto;
+    // text-align: center;
+    // display: inline-block;
+  }
+
+  .nav-items {
+    list-style: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around; 
+  }
+
+  .nav-items a {
+    text-decoration: none;
+    color: #f2f2f2;
+    font-size: 17px;
+    text-align: center;
+    display: block;
+    padding: 14px 16px;
+  }
+</style>
+<!-- <style scoped lang="scss">
+  @import '@/scss/_theme.scss';
+
+  .topnav {
+    background-color: $primary-color;
+    // max-width: 480px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .nav-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+    align-items: center;
+  }
+
+  .nav-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      padding: 14px 16px;
+    }
+    a {
+      text-decoration: none;
+      color: #f2f2f2;
+      font-size: 17px;
+      text-align: center;
+      display: block;
+    }
+  }
+
+  // .topnav a {
+  //   float: right;
+  //   display: block;
+  //   color: #f2f2f2;
+  //   text-align: center;
+  //   padding: 14px 16px;
+  //   text-decoration: none;
+  //   font-size: 17px;
+  // }
+
+  // .topnav a:hover {
+  //   background-color: #ddd;
+  //   color: black;
+  // }
+
+  // .topnav a.active {
+  //   background-color: #04AA6D;
+  //   color: white;
+  // }
+</style> -->
+<!-- untuk head -->
