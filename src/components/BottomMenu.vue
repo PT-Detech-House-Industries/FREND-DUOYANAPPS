@@ -1,6 +1,6 @@
 <template>
   <div class="bottom-menu">
-    <div class="manu-option">© Duoyan.maem 2022 </div>
+    <div class="manu-option">©Duoyan.maem 2020-2023</div>
     <!-- <div class="menu-option">
       <router-link to="/">Beranda</router-link>
     </div>

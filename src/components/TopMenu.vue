@@ -1,18 +1,22 @@
 <template>
   <div>
-    <!-- new -->
     <div class="nav-menu">
-      <div class="nav-items">
-        <router-link to="/dashboard">Beranda</router-link>
-        <router-link to="/about">Tentang</router-link>
-        <router-link to="/contact">Kontak</router-link>
+      <div class="nav-logo">
+        <router-link to="/">
+          <img src="../assets/png/logo.png" alt="Logo" class="logo">
+        </router-link>
+        <div class="nav-items">
+          <router-link to="/dashboard">Beranda</router-link>
+          <router-link to="/about">Tentang</router-link>
+          <router-link to="/member">Member</router-link>
+        </div>
       </div>
     </div>
-
-      <!-- <a href="#home" class="active">Home</a>
-      <a href="#news">News</a>
-      <a href="#contact">Contact</a>
-      <a href="#about">About</a> -->
+    <!-- new -->
+    <!-- <a href="#home" class="active">Home</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a> -->
     <!-- old -->
     <!-- <div class="top-menu">
       <router-link to="/">
@@ -156,32 +160,55 @@
   @import '@/scss/_theme.scss';
   .nav-menu {
     background-color: $primary-color;
-    width: 480px;
+    max-width: 480px;
+    margin: auto;
+    text-align: center;
     top: 0;
+    left: 0;
+    right: 0;
     position: fixed;
     // margin: auto;
     // text-align: center;
     // display: inline-block;
   }
 
-  .nav-items {
-    list-style: none;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-around; 
+  .nav-logo {
+    margin: 10px;
   }
 
-  .nav-items a {
-    text-decoration: none;
-    color: #f2f2f2;
-    font-size: 17px;
-    text-align: center;
-    display: block;
-    padding: 14px 16px;
+  .nav-items {
+    margin: 10px;
+    // float: left;
+    display: flex;
+    justify-content: space-around;
+
+    a {
+      text-decoration: none;
+      color: #f2f2f2;
+      display: block;
+      padding: 14px 16px;
+    }
   }
-</style>
+
+  // .nav-items {
+  //   list-style: none;
+  //   list-style: none;
+  //   margin: 0;
+  //   padding: 0;
+  //   display: flex;
+  //   justify-content: space-around; 
+  // }
+
+  // .nav-items a {
+  //   text-decoration: none;
+  //   color: #f2f2f2;
+  //   font-size: 17px;
+  //   text-align: center;
+  //   display: block;
+  //   padding: 14px 16px;
+  // }
+</style><!-- head menu -->
+
 <!-- <style scoped lang="scss">
   @import '@/scss/_theme.scss';
 
