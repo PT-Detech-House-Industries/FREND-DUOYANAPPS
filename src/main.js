@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import App from './App.vue'
 import routes from './routes/index'
 import store from './store/index' // Import store Vuex
+import 'bootstrap/dist/css/bootstrap.css'; // Import file CSS Bootstrap
+import 'bootstrap'; // Import JavaScript Bootstrap
 
 Vue.use(VueRouter)
 Vue.config.productionTip = false

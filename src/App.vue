@@ -32,14 +32,15 @@
     /* font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
-    font-family: 'PlusJakartaSans', sans-serif;
-    background-color: #F7F7F8;
+    font-family: 'PlusJakartaSans', sans-serif !important;
+    // background-color: #F7F7F8;
     color: #2c3e50;
     max-width: 480px;
     min-height: 100vh;
     padding-bottom: 1px;
     margin-top: 0;
     margin: auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   }
 
   /* Media query untuk perangkat mobile */

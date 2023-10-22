@@ -1,5 +1,28 @@
 <template>
-  <div class="container">
+  <div>
+    <div class="container justify-content-center">
+      <TopMenu></TopMenu>
+      <div class="title text-center">
+        <h1>Tentang Kami</h1>
+        <p>Kami adalah perusahaan yang luar biasa.</p>
+      </div>
+
+      <div class="row">
+        <!-- Kolom Bootstrap untuk tampilan mobile -->
+        <div class="col-6 bg-danger">
+          <div class="mt-3">
+            <p>Ini adalah kolom tampilan mobile.</p>
+          </div>
+        </div>
+        <div class="col-6 bg-success">
+          <p>Ini adalah kolom lain untuk tampilan mobile.</p>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- bootstrap -->
+
+  <!-- <div class="container">
     <TopMenu></TopMenu>
     <div class="title">
       <h1>Tentang Kami</h1>
@@ -26,10 +49,10 @@
         </tr>
       </tbody>
     </table>
-    <!-- <div class="container">
+    <div class="container">
       <iframe src="https://iik.ac.id/?gclid=CjwKCAjwsKqoBhBPEiwALrrqiM_z8NgionUOCLdXMCMF8DV3CM9zxB1W2eizZvsvO9PZ7L3WrX9HHRoCc_YQAvD_BwE"></iframe>
-    </div> -->
-  </div>
+    </div>
+  </div> -->
 </template>
 
 <script>

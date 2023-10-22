@@ -28,7 +28,7 @@
     /* Sesuaikan dengan gaya Anda */
     /* Width mengikuti #app */
     max-width: 480px;
-    height: 18px;
+    height: 40px;
     margin: auto;
     text-align: center;
 

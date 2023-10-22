@@ -1,33 +1,42 @@
 <template>
-  <div class="container">
-    <TopMenu></TopMenu>
-    <div class="title">
-      <h1>Selamat datang !</h1>
-      <p>Ini adalah halaman Beranda aplikasi kami.</p>
-      <div>
-        <button @click="tampilkanToast">Tampilkan Toast</button>
+  <div>
+    <div class="container">
+      <TopMenu></TopMenu>
+      <div class="title">
+        <h1>WELCOME</h1>
+        <p>Masukan nomor Whatsapp Anda</p>
+        <p>Untuk Melihat Status Member</p>
       </div>
-    </div>
-    <div class="widget-search">
-      <div class="search-container">
-        <input type="text" class="search-input" placeholder="Cari...">
-        <button class="search-button">Cari</button>
+
+      <div class="widget-search">
+        <div class="search-container">
+          <input v-model="inputValue" type="text" class="search-input" placeholder="08XXXXXXXXXX...">
+          <button @click="sendValue" class="search-button">Enter</button>
+        </div>
       </div>
-    </div>
-    <!-- <div class="card-home">
+      <div v-if="inputValue == 2">
+        <p>Input Nilai : {{ inputValue }}</p>
+        <button class="btn btn-primary">Tombol Bootstrap</button>
+      </div>
+      <!-- end untuk v-if  -->
+    </div>  
+  </div>
+
+  <!-- <div class="card-home">
       <div v-for="item in data.products" :key="item.id">
         <img :src="item.thumbnail" alt="Gambar">
       </div>
     </div> -->
-    <div class="row">
+    
+    <!-- <div class="row">
       <div class="column" v-for="item in data.products" :key="item.id">
         <img :src="item.thumbnail" alt="Gambar">
       </div>
-    </div>
-    <div class="card">
+    </div> -->
+
+    <!-- <div class="card">
       <img class="load-data" :src="loadingImage" v-if="loading" />
       <div class="list-data" v-else>
-        <!-- <div class="list-data"> -->
         <ul v-for="item in data.products" :key="item.id">
           <li>{{ item.id }}</li>
           <li>{{ item.title }}</li>
@@ -35,11 +44,7 @@
           <li>{{ item.price }}</li>
         </ul>
       </div>
-    </div>
-    <!-- <div class="container">
-      <iframe src="https://iik.ac.id/?gclid=CjwKCAjwsKqoBhBPEiwALrrqiM_z8NgionUOCLdXMCMF8DV3CM9zxB1W2eizZvsvO9PZ7L3WrX9HHRoCc_YQAvD_BwE"></iframe>
     </div> -->
-  </div>
 </template>
 
 <script>
@@ -53,10 +58,17 @@
       return {
         dataList: [], // Untuk menyimpan data dari API
         loading: true,
-        loadingImage: require('../assets/gif/load-v1.gif')
+        loadingImage: require('../assets/gif/load-v1.gif'),
+        inputValue: '',
       };
     },
     methods: {
+      sendValue() {
+        // Metode ini akan memperbarui data inputValue setiap kali input berubah
+        // this.$emit('input', this.inputValue);
+        console.log(this.inputValue);
+      },
+
       fetchData() {
         // Panggil aksi fetchData dari store untuk mengambil data
         this.$store.dispatch('fetchData');
@@ -98,7 +110,7 @@
         return message;
       }, toastOptions);
       
-      document.title = 'home - nihonuwu'
+      document.title = 'home - duoyan.maem'
     }
   };
 </script>
@@ -112,6 +124,10 @@
     min-height: 100vh;
     text-align: center;
     float: left;
+
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
   }
 
   .title {

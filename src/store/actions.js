@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 const serverApi = axios.create({
-  // baseURL: 'http://localhost:8000/api/',
-  baseURL: 'https://duoyan.nihonuwu.com/api/',
+  baseURL: 'http://localhost:8000/api/',
+  // baseURL: 'https://duoyan.nihonuwu.com/api/',
 })
 
 const cors = {

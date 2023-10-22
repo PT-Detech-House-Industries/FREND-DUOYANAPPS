@@ -1,28 +1,14 @@
 <template>
-  <div class="container">
+  <div>
     <TopMenu></TopMenu>
-    <h1>member</h1>
-    <ul v-for="item in memberData.data" :key="item.id">
-      <li>{{ item.id }}</li>
-      <li>{{ item.invoice }}</li>
-      <li>{{ item.quantity_purchased }}</li>
-      <li>{{ item.total_price }}</li>
-      <li>{{ item.purchase_date }}</li>
-      <li>{{ item.status }}</li>
-      <li>{{ memberData.status_message }}</li>
-    </ul>
-    <div class="box">
-      <ul v-for="item in memberStampleClaim.data" :key="item.id">
-        <li>{{ item.member_id }}</li>
-        <li>{{ item.status_claim }}</li>
-        <li>{{ item.quantity_purchased }}</li>
-        <li>{{ item.total_price }}</li>
-        <li>{{ item.purchase_date }}</li>
-        <li>{{ item.status }}</li>
-        <li>{{ memberStampleClaim.status_message }}</li>
-      </ul>
+    <div class="title text-center">
+      <br>
+      <br>
+      <br>
+      <br>
+      <h1>Member</h1>
+      <p>form untuk member duoyan maem.</p>
     </div>
-    <!-- <MemberStample></MemberStample> -->
   </div>
 </template>
 
