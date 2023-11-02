@@ -9,6 +9,7 @@ const cors = {
   headers: {
     'Access-Control-Allow-Origin': '*',
     'Content-type': 'application/json',
+    // 'Content-Type': 'multipart/form-data',
   }
 };
 
@@ -112,6 +113,57 @@ const actions = {
       console.error('Error fetching data:', error);
     }
   },
+
+  async fetchMemberCheck({ commit }, formData) {
+    try {
+      // Panggil API di sini
+      const response = await serverApi.post('member/check', formData, cors);
+      const data = response.data;
+      commit('memberCheck', data); // Panggil mutasi SET_DATA untuk menyimpan data
+      return response; // Mengembalikan respons
+    } catch (error) {
+      const errorImage = false;
+      // console.error('Error fetching data:', error);
+      if (error.response && error.response.status === 500) {
+        // console.error('Internal Server Error:', error);
+        // Handle kesalahan 500 di sini, misalnya menampilkan pesan error kepada pengguna
+        // alert('Terjadi kesalahan, Data Tidak Ditemukan.');
+        return errorImage;
+        //
+      } if (error.response && error.response.status === 404) {
+        //
+        return errorImage;
+        //
+      } else {
+        console.error('Error fetching data:', error);
+      }
+    }
+  }, // post
+
+  // member award
+
+  async fetchMemberAward({ commit }) {
+    try {
+      // Panggil API di sini
+      const response = await serverApi.get('member-award', cors);
+      const data = response.data;
+      commit('memberAward', data); // Panggil mutasi SET_DATA untuk menyimpan data
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  }, // get
+
+  async fetchMemberAwardRecord({ commit }) {
+    try {
+      // Panggil API di sini
+      const response = await serverApi.get('member-award-record', cors);
+      const data = response.data;
+      commit('memberAwardRecord', data); // Panggil mutasi SET_DATA untuk menyimpan data
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  }, // get
+
 };
 
 export default actions;

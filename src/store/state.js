@@ -12,6 +12,10 @@ const state = {
   memberStample: [],
   memberStampleClaim: [],
   memberPurchasing: [],
+  memberCheck: [],
+  // member award
+  memberAward: [],
+  memberAwardRecord: [],
 };
 
 export default state;

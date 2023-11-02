@@ -46,6 +46,19 @@ const mutations = {
     state.memberPurchasing = memberPurchasing;
   },
 
+  memberCheck(state, memberCheck) {
+    state.memberCheck = memberCheck;
+  },
+
+  // membuat award data
+  memberAward(state, memberAward) {
+    state.memberAward = memberAward;
+  },
+
+  memberAwardRecord(state, memberAwardRecord) {
+    state.memberAwardRecord = memberAwardRecord;
+  },
+  
 };
 
 export default mutations;

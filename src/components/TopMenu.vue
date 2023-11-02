@@ -2,12 +2,12 @@
   <div>
     <div class="nav-menu">
       <div class="nav-logo">
-        <router-link to="/">
+        <!-- <router-link to="/">
           <img src="../assets/png/logo.png" alt="Logo" class="logo">
-        </router-link>
+        </router-link> -->
         <div class="nav-items">
           <router-link to="/dashboard">Beranda</router-link>
-          <router-link to="/about">Tentang</router-link>
+          <!-- <router-link to="/about">Produk</router-link> -->
           <router-link to="/member">Member</router-link>
         </div>
       </div>

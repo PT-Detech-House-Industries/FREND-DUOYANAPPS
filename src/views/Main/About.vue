@@ -113,7 +113,7 @@
       // this.fetchTalent();
     },
     mounted() {
-      document.title = 'about - nihonuwu'
+      document.title = 'about - duoyan.maem'
     },
   }
 </script>
@@ -123,6 +123,7 @@
   .container {
     // background: #ebebeb;
     min-height: 100vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   }
 
   .title {
